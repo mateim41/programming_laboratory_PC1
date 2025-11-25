@@ -6,5 +6,6 @@
 void *xmalloc(size_t size);
 void *xcalloc(size_t nrelem, size_t elem_size);
 void *xrealloc(void *v, size_t size);
+// free(v)
 
 #endif

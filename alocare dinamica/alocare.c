@@ -13,6 +13,7 @@ void *xmalloc(size_t size)
     }
     return v;
 }
+
 void *xcalloc(size_t nrelem, size_t elem_size)
 {
     void *v = calloc(nrelem, elem_size);
@@ -23,6 +24,7 @@ void *xcalloc(size_t nrelem, size_t elem_size)
     }
     return v;
 }
+
 void *xrealloc(void *v, size_t size)
 {
     void *p = realloc(v, size);
