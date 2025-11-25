@@ -3,14 +3,14 @@
 
 int main(void)
 {
-    float x,p=1;
-    scanf("%f",&x);
-    while(x!=0)
+    float x, p = 1;
+    scanf("%f", &x);
+    while (x != 0)
     {
-        p*=x;
+        p *= x;
         scanf("%f", &x);
     }
-    printf("%.2f\n",p);
+    printf("%.2f\n", p);
 
     return EXIT_SUCCESS;
 }

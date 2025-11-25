@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <math.h>
 #include <stdbool.h>
+
 #include "vectorint.h"
 
 void citire(int v[], size_t n)
