@@ -14,7 +14,7 @@ int main(void)
     double procentPierderi;
     scanf("%lf", &procentPierderi);
 
-    double *vectorConsum = citireConsumEnergie(nrCase);
+    double *vectorConsum = (double *)citireConsumEnergie(nrCase);
 
     printf("Numarul de case: %zd\n\n", nrCase);
     printf("Plafon de consum: %.2lf kWh\n\n", plafonMaxim);
