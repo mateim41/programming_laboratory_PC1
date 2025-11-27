@@ -6,7 +6,7 @@
 
 void *citireConsumEnergie(size_t nr_elem)
 {
-    double *v = xcalloc(nr_elem, sizeof(*v));
+    double *v = (double *)xcalloc(nr_elem, sizeof(*v));
     for (int i = 0; i < nr_elem; i++)
     {
         scanf("%lf", v + i);
