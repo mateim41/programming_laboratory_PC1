@@ -1,10 +1,10 @@
 # Matrici
 
-![alt text](20251120_143659.jpg) 
+![20251120_143659](https://github.com/user-attachments/assets/12abe3fa-58be-4535-a1f1-f3bf4a1bfde7)
 
-![alt text](20251120_143648.jpg)
+![20251120_143648](https://github.com/user-attachments/assets/82d1f721-2f16-4644-a7b0-76320dcce7f0)
 
-![alt text](20251120_144512.jpg)
+![20251120_144512](https://github.com/user-attachments/assets/e55eff24-4da2-45bb-89d3-0641b3042797)
 
 ```c
 int m1[ROWS][COLS]; // matrice alocata static

@@ -153,10 +153,10 @@ int a = *v; // eroare pt ca v nu mai pointeaza la o adresa valida
     Ilegal  sa compar pointeri la zone diferite de memorie
     (nu am cum sa stiu unde in memorie se afla)
 
-![alt text](image-1-1.png)
+<img width="1024" height="562" alt="image-1-1" src="https://github.com/user-attachments/assets/8b974368-c8df-4fba-a07a-6b9205c7815a" />
 
-![alt text](image_2-1.png)
+<img width="746" height="970" alt="image_2-1" src="https://github.com/user-attachments/assets/a4dba78d-b1bd-425e-8cf8-b5ab1dc9a671" />
 
-![alt text](<Screenshot 2025-11-15 142622-1-1.png>)
+<img width="491" height="602" alt="Screenshot 2025-11-15 142622-1-1" src="https://github.com/user-attachments/assets/dd825d19-56c4-4c1e-9ebf-e1ffa37f4e2f" />
 
-![alt text](image_1-1.png)
+<img width="1824" height="684" alt="image_1-1" src="https://github.com/user-attachments/assets/53eb313e-d022-4e01-b2fa-1fe47809ad84" />
