@@ -2,7 +2,7 @@
 
 An __array__ is a _collection of elements_ of the same data type stored in contiguous memory locations. Arrays allow you to store multiple values under a single variable name, accessed via indices.
 
-![alt text](20251113_142409.jpg)
+![20251113_142409](https://github.com/user-attachments/assets/ee79e749-5807-4dee-8ab8-14f760cce02f)
 
     - Nu pot aloca pe stiva dimensiuni foarte mari
     - Odata ce declar un vector static nu mai pot redimensiona vectorul mai tarziu
@@ -51,7 +51,7 @@ Memoria tot pe stiva este alocata deci daca n e prea mare o sa ramanem fara memo
 
 ## Array decay to pointer
 
-![alt text](20251113_151358.jpg)
+![20251113_151358](https://github.com/user-attachments/assets/ec156702-916d-47de-a0d6-5536be44d4c6)
 
 Fiindca vectorul se degradeaza la pointer nu trebuie sa folosesc & cand folosesc numele vectorului.
 
@@ -108,7 +108,7 @@ void afisare2(int v[], int rows, int cols)
 
     Pentru mod 2
 
-![alt text](20251113_152944.jpg)
+![20251113_152944](https://github.com/user-attachments/assets/3584da98-07bd-48f4-9926-a5e86bf34a05)
 
 ```c
 // Mod 3
