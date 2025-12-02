@@ -1,7 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-// alocare dinamica matrici
 void **citireMatrice(int n, int m);
 void afisareMatrice(int **matrice, int n, int m);
 
