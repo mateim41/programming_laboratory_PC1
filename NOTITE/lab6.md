@@ -59,7 +59,7 @@ printf("Valoarea lui r (= adresa lui q): %p\n", r);
 printf("Valoarea lui *r (= valoarea lui q = adresa lui p): %p\n", *r);
 ```
 
-![alt text](20251113_084018-1.jpg)
+![20251113_084018-1](https://github.com/user-attachments/assets/d2ffc7d0-264c-4ff3-8132-ac07926cf7eb)
 
 ## Array decay to pointer
 Orice vector de tip `int v[]` este vazut ca un `int *`
