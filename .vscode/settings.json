@@ -1,0 +1,27 @@
+{
+    "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "files.associations": {
+        "*.h": "cpp",
+        "stdlib.h": "c",
+        "cmath": "cpp"
+    },
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.autocomplete": "default",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "git.enabled": true,
+    "markdown.math.enabled": true,
+    "markdown.preview.fontSize": 14,
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/clang-20"
+}
