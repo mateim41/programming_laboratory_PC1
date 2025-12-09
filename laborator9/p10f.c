@@ -4,9 +4,9 @@
 #include "alocare_matrici.h"
 #include "p10.h"
 
-int **citireMatriceDinamic(const size_t n, const size_t m)
+int **citireMatrice(const size_t n, const size_t m)
 {
-    int **matrix = (int **)alocare_matrice(n, m, sizeof(int));
+    int **matrix = (int **)alocareMatrice(n, m, sizeof(int));
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)

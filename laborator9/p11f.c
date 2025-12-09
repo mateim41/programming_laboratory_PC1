@@ -4,47 +4,47 @@
 #include "p11.h"
 
 void *xmalloc(const size_t size);
-void **alocareMatrice(const size_t n, const size_t m, const size_t elemSize)
+void **alocareMatrice(const size_t nrlinii, const size_t nrcoloane, const size_t elemSize)
 {
-    void **matrix = xmalloc(n * sizeof(*matrix));
-    for (int i = 0; i < n; i++)
+    void **matrix = xmalloc(nrlinii * sizeof(*matrix));
+    for (size_t i = 0; i < nrlinii; i++)
     {
-        matrix[i] = xmalloc(m * elemSize);
+        matrix[i] = xmalloc(nrcoloane * sizeof(elemSize));
     }
     return matrix;
 }
-void dealocareMatrice(void ***matrix, size_t n)
+void dealocareMatrice(void ***matrix, const size_t nrlinii)
 {
     if (matrix == NULL || *matrix == NULL)
     {
         return;
     }
-    void **realMatrix = *matrix;
-    for (int i = 0; i < n; i++)
+    void **mainMatrix = *matrix;
+    for (size_t i = 0; i < nrlinii; i++)
     {
-        free(realMatrix[i]);
+        free(mainMatrix[i]);
     }
-    free(realMatrix);
+    free(mainMatrix);
     *matrix = NULL;
 }
 
-int **citireMatrice(const size_t n, const size_t m)
+int **citireMatrice(const size_t nrlinii, const size_t nrcoloane)
 {
-    int **matrix = (int **)alocareMatrice(n, m, sizeof(int));
-    for (size_t i = 0; i < n; i++)
+    int **matrix = (int **)alocareMatrice(nrlinii, nrcoloane, sizeof(int));
+    for (size_t i = 0; i < nrlinii; i++)
     {
-        for (size_t j = 0; j < m; j++)
+        for (size_t j = 0; j < nrcoloane; j++)
         {
             scanf("%d", *(matrix + i) + j);
         }
     }
     return matrix;
 }
-void afisare_matrice(const int **matrix, const size_t n, const size_t m)
+void afisareMatrice(const int **matrix, const size_t nrlinii, const size_t nrcoloane)
 {
-    for (size_t i = 0; i < n; i++)
+    for (size_t i = 0; i < nrlinii; i++)
     {
-        for (size_t j = 0; j < m; j++)
+        for (size_t j = 0; j < nrcoloane; j++)
         {
             printf("%d ", *(*(matrix + i) + j));
         }
@@ -52,49 +52,27 @@ void afisare_matrice(const int **matrix, const size_t n, const size_t m)
     }
 }
 
-// i, j <- ce linii vreau sa interschimb
-void interschimbareLinii(int **matrix, const size_t i, const size_t j)
+int *vectorMaxime(const int **matrix, const size_t nrlinii, const size_t nrcoloane);
+// i, j <- liniile pe care vreau sa le schimb
+void interschimbareLinii(int **matrix, const size_t i, const size_t j);
+void ordonareMatrice(int **matrix, const size_t nrlinii, const size_t nrcoloane)
 {
-    int *aux = matrix[i];
-    matrix[i] = matrix[j];
-    matrix[j] = aux;
-}
-int *VectorMaxime_LinieMatrice(int **matrix, const size_t n, const size_t m)
-{
-    int *vectorMaxim = xmalloc(n * sizeof(*vectorMaxim));
-    size_t k = 0;
-    for (size_t i = 0; i < n; i++)
+    int *maximLinieMatrice = vectorMaxime((const int **)matrix, nrlinii, nrcoloane);
+    for (size_t i = 0; i < nrlinii - 1; i++)
     {
-        int max = 0;
-        for (size_t j = 0; j < m; j++)
+        for (size_t j = i + 1; j < nrlinii; j++)
         {
-            if (matrix[i][j] > max)
-            {
-                max = matrix[i][j];
-            }
-        }
-        vectorMaxim[k++] = max;
-    }
-    return vectorMaxim;
-}
-void ordonareMatrice(int **matrix, const size_t n, const size_t m)
-{
-    int *vMatrice_maxim = VectorMaxime_LinieMatrice(matrix, n, m); // 2 0 -3 1 2 4 10
-    for (size_t i = 0; i < n - 1; i++)
-    {
-        for (size_t j = i + 1; j < n; j++)
-        {
-            if (*(vMatrice_maxim + i) > *(vMatrice_maxim + j))
+            if (maximLinieMatrice[i] > maximLinieMatrice[j])
             {
                 interschimbareLinii(matrix, i, j);
-                int temp = *(vMatrice_maxim + i);
-                *(vMatrice_maxim + i) = *(vMatrice_maxim + j);
-                *(vMatrice_maxim + j) = temp;
+                int temp = *(maximLinieMatrice + i);
+                *(maximLinieMatrice + i) = *(maximLinieMatrice + j);
+                *(maximLinieMatrice + j) = temp;
             }
         }
     }
-    free(vMatrice_maxim);
-    vMatrice_maxim = NULL;
+    free(maximLinieMatrice);
+    maximLinieMatrice = NULL;
 }
 
 void *xmalloc(const size_t size)
@@ -106,4 +84,27 @@ void *xmalloc(const size_t size)
         exit(EXIT_FAILURE);
     }
     return v;
+}
+int *vectorMaxime(const int **matrix, const size_t nrlinii, const size_t nrcoloane)
+{
+    int *maximLinieMatrice = xmalloc(nrlinii * sizeof(*maximLinieMatrice));
+    for (size_t i = 0; i < nrlinii; i++)
+    {
+        int max = 0;
+        for (size_t j = 0; j < nrcoloane; j++)
+        {
+            if (*(*(matrix + i) + j) > max)
+            {
+                max = *(*(matrix + i) + j);
+            }
+        }
+        *(maximLinieMatrice + i) = max;
+    }
+    return maximLinieMatrice;
+}
+void interschimbareLinii(int **matrix, const size_t i, const size_t j)
+{
+    int *aux = matrix[i];
+    matrix[i] = matrix[j];
+    matrix[j] = aux;
 }

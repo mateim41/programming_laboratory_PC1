@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-int **citireMatriceDinamic(const size_t n, const size_t m);
+int **citireMatrice(const size_t n, const size_t m);
 void afisareMatrice(const int **matrix, const size_t n, const size_t m);
 
 #endif

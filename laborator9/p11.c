@@ -5,17 +5,18 @@
 
 int main(void)
 {
-    size_t n, m;
+    size_t n, m; // linii si coloane
     printf("Introduceti dimensiunile matricei: ");
-    scanf("%zd %zd", &n, &m);
+    scanf("%zu %zu", &n, &m);
 
-    printf("Cititi matricea:\n");
+    printf("Introduceti matricea:\n");
     int **matrix = citireMatrice(n, m);
     printf("\n");
 
     ordonareMatrice(matrix, n, m);
-    printf("Matricea ordonata este:\n");
-    afisare_matrice((const int **)matrix, n, m);
+    printf("Matricea ordonata:\n");
+    afisareMatrice((const int **)matrix, n, m);
+    printf("\n");
 
     dealocareMatrice((void ***)&matrix, n);
     return EXIT_SUCCESS;

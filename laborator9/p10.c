@@ -11,10 +11,10 @@ int main(void)
     scanf("%zu %zu", &n, &m);
 
     printf("Introduceti matricea:\n");
-    const int **matrice = (const int **)citireMatriceDinamic(n, m);
+    const int **matrice = (const int **)citireMatrice(n, m);
     printf("\n");
     afisareMatrice(matrice, n, m);
 
-    dealocare_matrice((void ***)&matrice);
+    dealocareMatrice((void ***)&matrice, n);
     return EXIT_SUCCESS;
 }

@@ -3,30 +3,6 @@
 
 #include "alocare_matrici.h"
 
-void *xmalloc(const size_t size);
-void **alocare_matrice(const size_t n, const size_t m, const size_t elemSize)
-{
-    void **matrix = xmalloc(n * sizeof(*matrix));
-    void *rowStart = xmalloc(n * m * elemSize);
-    for (size_t i = 0; i < n; i++)
-    {
-        matrix[i] = (void *)((char *)rowStart + (i * m * elemSize));
-    }
-    return matrix;
-}
-
-void dealocare_matrice(void ***matrix)
-{
-    if (matrix == NULL || *matrix == NULL)
-    {
-        return;
-    }
-    void **realMatrix = *matrix;
-    free(realMatrix[0]);
-    free(realMatrix);
-    *matrix = NULL;
-}
-
 void *xmalloc(const size_t size)
 {
     void *v = malloc(size);
@@ -36,4 +12,27 @@ void *xmalloc(const size_t size)
         exit(EXIT_FAILURE);
     }
     return v;
+}
+void **alocareMatrice(const size_t nrlinii, const size_t nrcoloane, const size_t elemSize)
+{
+    void **matrix = xmalloc(nrlinii * sizeof(*matrix));
+    for (size_t i = 0; i < nrlinii; i++)
+    {
+        matrix[i] = xmalloc(nrcoloane * sizeof(elemSize));
+    }
+    return matrix;
+}
+void dealocareMatrice(void ***matrix, const size_t nrlinii)
+{
+    if (matrix == NULL || *matrix == NULL)
+    {
+        return;
+    }
+    void **realMatrix = *matrix;
+    for (size_t i = 0; i < nrlinii; i++)
+    {
+        free(realMatrix[i]);
+    }
+    free(realMatrix);
+    *matrix = NULL;
 }

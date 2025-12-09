@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-void **alocare_matrice(const size_t n, const size_t m, const size_t elemSize);
-void dealocare_matrice(void ***matrix);
+void **alocareMatrice(const size_t nrlinii, const size_t nrcoloane, const size_t elemSize);
+void dealocareMatrice(void ***matrix, const size_t nrlinii);
 
 #endif
