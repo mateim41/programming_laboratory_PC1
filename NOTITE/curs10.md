@@ -1,8 +1,8 @@
 # Structuri
 
-![alt text](20251204_152723.jpg)
+![20251204_152723](https://github.com/user-attachments/assets/3dc858ac-b243-455b-805c-7ed62d9ca696)
 
-![alt text](20251204_152258.jpg)
+![20251204_152258](https://github.com/user-attachments/assets/00992d9e-258c-4b87-967e-2616e22092b4)
 
 Cum functioneaza __const__:
 
@@ -38,7 +38,7 @@ int main(void)
 
     3. oportunitati de optimizare pentru compilator (info despre valorile imutabile - care nu se mia schimba pe durata programului ajuta compilatorul sa genereze assembly mai eficient)
 
-![alt text](image.png)
+<img width="1530" height="996" alt="image" src="https://github.com/user-attachments/assets/59b8da89-67e5-4ede-932a-2b5ab2adebc4" />
 
 ### restrict
 
