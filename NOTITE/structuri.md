@@ -81,7 +81,7 @@ void printPerson(struct Person *p) {
 Citirea se face la fel ca variabilele normale:
 ```c
 struct Person p;
-scanf("%s", p.name);
+scanf("%s", &p.name);
 scanf("%d", &p.age);
 scanf("%f", &p.height);
 ```
