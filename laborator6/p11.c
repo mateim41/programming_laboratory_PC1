@@ -24,8 +24,8 @@ int main(void)
     int *nr = &m;
     double *nrr = &fx;
 
-    printf("Valoarea pointerului cu adresa lui m este = %p\n", c);
-    printf("Valoarea pointerului cu adresa lui z este = %p\n", nr);
+    printf("Valoarea pointerului cu adresa lui z este = %p\n", c);
+    printf("Valoarea pointerului cu adresa lui m este = %p\n", nr);
     printf("Valoarea pointerului cu adresa lui fx este = %p\n", nrr);
 
     printf("\n");
